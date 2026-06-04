@@ -1,0 +1,289 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(
+        135deg,
+        #ffd6e7,
+        #ffffff,
+        #e6d6ff
+    );
+    color:#444;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    color:#ff5d97;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+    color:#666;
+}
+
+/* BUTTON */
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(
+        45deg,
+        #ff7eb3,
+        #c89cff
+    );
+    color:white;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+}
+
+/* MAIN */
+
+.hidden{
+    display:none;
+}
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff5d97;
+}
+
+/* CARD */
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* LETTER */
+
+#letter{
+    line-height:2;
+    font-size:1.05rem;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.item{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* QUOTES */
+
+#quote{
+    text-align:center;
+    font-size:1.3rem;
+    font-style:italic;
+    color:#ff5d97;
+}
+
+/* GIFT MESSAGE */
+
+#giftMessage{
+    margin-top:20px;
+    text-align:center;
+    font-size:1.1rem;
+    color:#555;
+}
+
+/* FOOTER */
+
+.footer{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.footer h1{
+    font-family:'Playfair Display',serif;
+    color:#ff5d97;
+    margin-bottom:20px;
+    max-width:800px;
+}
+
+.footer p{
+    max-width:700px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.footer h3{
+    color:#ff5d97;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    section{
+        padding:60px 20px;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+}.sakura{
+    position:fixed;
+    top:-20px;
+    pointer-events:none;
+    z-index:999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+.butterfly{
+    position:fixed;
+    font-size:30px;
+    z-index:999;
+    pointer-events:none;
+    animation:fly 15s linear infinite;
+}
+
+.butterfly1{
+    top:20%;
+    left:-100px;
+}
+
+.butterfly2{
+    top:50%;
+    left:-150px;
+    animation-delay:5s;
+}
+
+.butterfly3{
+    top:70%;
+    left:-200px;
+    animation-delay:10s;
+}
+
+@keyframes fly{
+    from{
+        transform:translateX(-100px);
+    }
+
+    to{
+        transform:translateX(120vw);
+    }
+}
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#ff8ab6;
+    border-radius:50%;
+    filter:blur(150px);
+    top:-200px;
+    left:-100px;
+    opacity:.4;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#c89cff;
+    border-radius:50%;
+    filter:blur(150px);
+    bottom:-200px;
+    right:-100px;
+    opacity:.4;
+    z-index:-1;
+}
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
